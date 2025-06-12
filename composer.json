@@ -1,0 +1,22 @@
+{
+    "name": "bilbofox/php-di-panel",
+    "type": "library",
+    "description": "Tracy debugger panel for displaying services of PHP-DI container",
+    "authors": [
+        {
+            "name": "Michal Kvita",
+            "email": "Mikvt@seznam.cz",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "tracy/tracy": "^2.6.0",
+        "php-di/php-di": "^7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bilbofox\\PHPDIPanel\\": "src/"
+        }
+    }
+}

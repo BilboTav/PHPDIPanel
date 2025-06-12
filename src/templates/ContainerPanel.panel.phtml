@@ -1,0 +1,34 @@
+<?php
+declare(strict_types=1);
+
+namespace Bilbofox\PHPDIPanel;
+
+use Tracy\Dumper;
+
+?>
+
+<h1>PHP-DI Container</h1>
+<table class="tracy-sortable">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Service</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($services as $name => $service): ?>
+        <tr>
+            <td>
+                <?php if ($service !== null): ?>
+                    <strong><?php endif; ?><?= $name ?><?php if ($service !== null): ?></strong>
+                <?php endif; ?>
+            </td>
+            <td>
+                <?php if ($service !== null): ?>
+                    <?= Dumper::toHtml($service, [Dumper::COLLAPSE => true, Dumper::LIVE => true, Dumper::DEPTH => 5]); ?>
+                <?php endif; ?>
+            </td>
+        </tr>
+    <?php endforeach ?>
+    </tbody>
+</table>
